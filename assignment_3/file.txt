@@ -1,0 +1,2 @@
+dupa 1 2 3
+raz dwa trzy
