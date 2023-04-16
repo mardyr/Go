@@ -1,0 +1,21 @@
+syntax = "proto3";
+
+package calculator;
+
+import "primes.proto";
+
+option go_package ="github.com/mardyr/Go/gRPC/calculator/proto";
+
+message CalculatorRequest{
+    int32  first_value = 1;
+    int32  second_value = 2;
+}
+
+message CalculatorResponse{
+    int32  result = 1;
+}
+
+service CalculatorService{
+    rpc Calculate(CalculatorRequest) returns(CalculatorResponse);
+    rpc Primes(PrimeRequest) returns (stream PrimeResponse);
+}
